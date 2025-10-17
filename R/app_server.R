@@ -11,8 +11,9 @@ app_server <- function(input, output, session) {
   # Your application server logic
 
   ## Species codes
-  species_codes <- reactive(
-    x = read_delim(
+  species_codes <- eventReactive(
+    input$species_codes,
+    read_delim(
       file = input$species_codes$datapath,
       col_types = "ci",
       show_col_types = FALSE,
