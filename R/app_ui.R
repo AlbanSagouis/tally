@@ -38,7 +38,8 @@ app_ui <- function(request) {
           label = "Enter counts",
           updateOn = "change"
         ),
-        tableOutput(outputId = "tbl_counts")
+        tableOutput(outputId = "tbl_counts"),
+        downloadButton("downloadCounts", "Download Counts")
       ),
       nav_panel(
         title = "Vignette"
@@ -47,7 +48,7 @@ app_ui <- function(request) {
         title = "Acknowledgements",
         verbatimTextOutput(outputId = "citation")
       ),
-      input_dark_mode()
+      footer = card_footer(input_dark_mode())
     )
   )
 }

@@ -1,6 +1,6 @@
 Package: tally
 Title: A Programmable Tally Counter in R
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R:
   c(
     person("Alban", "Sagouis", role = c("aut", "cre"),
@@ -19,6 +19,7 @@ License: MIT + file LICENSE
 URL: https://github.com/albansagouis/tally
 BugReports: https://github.com/albansagouis/tally/issues
 Imports:
+    utils,
     config,
     golem,
     shiny,
