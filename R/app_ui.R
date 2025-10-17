@@ -9,7 +9,7 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic
-    fluidPage(
+    bslib::page_fluid(
       title = "Data Input",
       # golem::golem_welcome_page() # Remove this line to start building your UI
       h1("Data Input"),
