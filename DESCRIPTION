@@ -4,7 +4,8 @@ Version: 0.0.0.9000
 Authors@R:
   c(
     person("Alban", "Sagouis", role = c("aut", "cre"),
-        email = "alban.sagouis@idiv.de", comment = c(ORCID = "0000-0002-3827-1063")),
+        email = "alban.sagouis@idiv.de",
+        comment = c(ORCID = "0000-0002-3827-1063")),
     person("European Research Council grant AdG MetaCHANGE 101098020",
         role = "fnd"),
     person("German Centre for Integrative Biodiversity Research (iDiv) Halle-Jena-Leipzig",
@@ -20,7 +21,8 @@ BugReports: https://github.com/albansagouis/tally/issues
 Imports:
     config,
     golem,
-    shiny
+    shiny,
+    bslib
 Suggests:
     spelling,
     testthat (>= 3.0.0)

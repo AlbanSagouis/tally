@@ -3,23 +3,51 @@
 #' @param request Internal parameter for `{shiny}`.
 #'     DO NOT REMOVE.
 #' @import shiny
+#' @import bslib
 #' @noRd
 app_ui <- function(request) {
-  tagList(
+  bootstrapPage(
+    theme = bs_theme(version = 5),
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic
-    bslib::page_fluid(
-      title = "Data Input",
-      # golem::golem_welcome_page() # Remove this line to start building your UI
-      h1("Data Input"),
-      h2("Data entry"),
-      textInput(
-        inputId = "raw_data",
-        label = "Enter counts",
-        updateOn = "change"
+    page_navbar(
+      title = "tally",
+      nav_panel(
+        title = "Session info",
+        textInput(
+          inputId = "technician",
+          label = "Technician name"
+        ),
+        textInput(
+          inputId = "entry_date",
+          label = "Date"
+        ),
+        textInput(
+          inputId = "pond_code",
+          label = "Pond Name"
+        ),
       ),
-      tableOutput(outputId = "tbl_counts")
+      nav_panel(
+        title = "Data Input",
+        # golem::golem_welcome_page() # Remove this line to start building your UI
+        h1("Data Input"),
+        h2("Data entry"),
+        textInput(
+          inputId = "raw_data",
+          label = "Enter counts",
+          updateOn = "change"
+        ),
+        tableOutput(outputId = "tbl_counts")
+      ),
+      nav_panel(
+        title = "Vignette"
+      ),
+      nav_panel(
+        title = "Acknowledgements",
+        verbatimTextOutput(outputId = "citation")
+      ),
+      input_dark_mode()
     )
   )
 }
