@@ -19,7 +19,7 @@ app_ui <- function(request) {
           inputId = "technician",
           label = "Technician name"
         ),
-        textInput(
+        dateInput(
           inputId = "entry_date",
           label = "Date"
         ),
@@ -27,6 +27,21 @@ app_ui <- function(request) {
           inputId = "pond_code",
           label = "Pond Name"
         ),
+      ),
+      nav_panel(
+        title = "Species codes",
+        h1("Species codes"),
+        fileInput(
+          inputId = "species_codes",
+          label = "Add your species codes",
+          multiple = FALSE,
+          accept = c(
+            "text/csv",
+            "text/comma-separated-values",
+            ".csv"
+          )
+        ),
+        tableOutput(outputId = "tbl_species_codes")
       ),
       nav_panel(
         title = "Data Input",
@@ -39,6 +54,7 @@ app_ui <- function(request) {
           updateOn = "change"
         ),
         tableOutput(outputId = "tbl_counts"),
+        br(),
         downloadButton("downloadCounts", "Download Counts")
       ),
       nav_panel(

@@ -9,5 +9,6 @@ tally <- function(input) {
   # checkmate::assert_character(input)
 
   values <- base::strsplit(x = input, split = "", fixed = FALSE, perl = TRUE)
-  base::table(values, dnn = c("Species"))
+  values <- base::table(values, dnn = c("Species"))
+  as.data.frame(values)
 }
