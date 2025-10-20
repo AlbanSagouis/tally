@@ -3,8 +3,10 @@
 ^data-raw$
 dev_history.R
 ^dev$
+^wwww$
 $run_dev.*
 ^.here$
 ^LICENSE\.md$
 ^README\.Rmd$
 ^README\.html$
+^CITATION\.cff$

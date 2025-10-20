@@ -4,6 +4,7 @@
 #'     DO NOT REMOVE.
 #' @import shiny
 #' @importFrom utils citation
+#' @importFrom utils installed.packages
 #' @importFrom readr read_delim
 #' @importFrom readr write_csv
 #' @noRd
@@ -46,4 +47,8 @@ app_server <- function(input, output, session) {
 
   ## Acknowledgements
   output$citation <- renderPrint(citation(package = "tally"))
+  output$version <- renderText(paste(
+    "tally version ",
+    installed.packages()["tally", "Version"]
+  ))
 }

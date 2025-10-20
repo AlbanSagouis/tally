@@ -1,11 +1,15 @@
 Package: tally
 Title: A Programmable Tally Counter in R
 Version: 0.0.0.9002
+Date: 2025
 Authors@R:
   c(
     person("Alban", "Sagouis", role = c("aut", "cre"),
         email = "alban.sagouis@idiv.de",
         comment = c(ORCID = "0000-0002-3827-1063")),
+    person("Minghua", "Shen", role = "rev",
+        email = "minghua.shen@idiv.de",
+        comment = c(ORCID = "0000-0001-9862-9875")),
     person("European Research Council grant AdG MetaCHANGE 101098020",
         role = "fnd"),
     person("German Centre for Integrative Biodiversity Research (iDiv) Halle-Jena-Leipzig",
